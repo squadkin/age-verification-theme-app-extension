@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "Squadkin: Age Verification"
+client_id = "b49b5052892101918c58f2bc1d09401c"
+application_url = "https://squadkin.com/shopifyapps/AgeVerification"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+use_legacy_install_flow = true
+
+[auth]
+redirect_urls = [
+  "https://squadkin.com/shopifyapps/AgeVerification/authenticate"
+]
+
+[webhooks]
+api_version = "2022-07"
+
+  [webhooks.privacy_compliance]
+  customer_deletion_url = "https://squadkin.com/shopifyapps/AgeVerification/webhook/customers-redact"
+  customer_data_request_url = "https://squadkin.com/shopifyapps/AgeVerification/webhook/customers-data-request"
+  shop_deletion_url = "https://squadkin.com/shopifyapps/AgeVerification/webhook/shop-redact"
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "squadkin-age-verification-pro.myshopify.com"
